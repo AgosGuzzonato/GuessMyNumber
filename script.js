@@ -1,21 +1,4 @@
 'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
-
-console.log(
-  (document.querySelector('.message').textContent = 'Correct Number')
-);
-
-console.log((document.querySelector('.guess').value = 5));
-*/
-
-// document.querySelector('.check')  --> this returns an element
-//document.addeventListener() --> this is a method. All methods needs to be called with a ()
-
-/*document.querySelector('.check').addEventListener('click', function () {
-  console.log(document.querySelector('.guess').value);
-});*/
-//También se puede hacer lo mismo pero guardandolo en una variable
 
 //INITIAL SETTINGS
 let secretNumber = Math.trunc(Math.random() * 20) + 1; //This is because we want to include de 20
@@ -29,7 +12,6 @@ let displayMessage = function (message) {
 document.querySelector('.check').addEventListener('click', function () {
   let guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
-
   //-----------------------------------WHEN THERE IS NO INPUT----------------------------------------
   if (!guess) {
     displayMessage('There is no number');
@@ -55,32 +37,8 @@ document.querySelector('.check').addEventListener('click', function () {
     displayMessage('You lost the game');
   }
 });
-
-//     //WHEN GUESS IS TOO HIGH
-//   } else if (guess > secretNumber) {
-//     if (score > 1) {
-//       document.querySelector('.message').textContent = 'Too high';
-//       score--;
-//       document.querySelector('.score').textContent = score;
-//     } else {
-//       document.querySelector('.message').textContent = 'You lost the game';
-//     }
-
-//     //WHEN GUESS IS TOO LOW
-//   } else if (guess < secretNumber) {
-//     if (score > 1) {
-//       document.querySelector('.message').textContent = 'Too low';
-//       score--;
-//       document.querySelector('.score').textContent = score;
-//     } else {
-//       document.querySelector('.message').textContent = 'You lost the game';
-//     }
-//   }
-// });
-
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
-
   document.querySelector('.number').textContent = '?';
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   displayMessage('Start Guessing');
