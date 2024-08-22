@@ -1,8 +1,8 @@
 'use strict';
 
 //INITIAL SETTINGS
-let secretNumber = Math.trunc(Math.random() * 20) + 1; //This is because we want to include de 20
-let score = 20; //STATE VARIABLE
+let secretNumber = Math.trunc(Math.random() * 20) + 1; 
+let score = 20; 
 let highscore = 0;
 
 let displayMessage = function (message) {
@@ -16,8 +16,8 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     displayMessage('There is no number');
 
-    //-----------------------------------WHEN THE PLAYER WINS-----------------------------------------
-  } else if (guess === secretNumber) {
+  //-----------------------------------WHEN THE PLAYER WINS-----------------------------------------
+  } if (guess === secretNumber) {
     displayMessage('Correct Number!');
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -29,7 +29,7 @@ document.querySelector('.check').addEventListener('click', function () {
     }
 
     //-------------------------------------WHEN THE PLAYER IS WRONG------------------------------------
-  } else if (guess !== secretNumber) {
+  } if (guess !== secretNumber) {
     displayMessage(guess > secretNumber ? 'Too high' : 'Too low');
     score--;
     document.querySelector('.score').textContent = score;
